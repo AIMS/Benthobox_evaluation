@@ -81,9 +81,11 @@ def MAEplot(basedir,predfiles,obsfile, doplot=True):
         
         
     results=pd.concat(results, axis=0)
+    results[['cilow',"cimax"]]=results[['cilow',"cimax"]].astype('float')
+    results['cilow']=results['mean']-results['cilow']
+    results['cimax']=results['cimax']-results['mean']
 
     if doplot:
-        results[['cilow',"cimax"]]=results[['cilow',"cimax"]].astype('float')
         data=[]
         for i in list(set(results['Experiment'])):
             df=results.loc[results['Experiment'] == i]
