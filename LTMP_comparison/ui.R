@@ -17,7 +17,7 @@ library(rgdal)
 df=read.delim2("~/Dropbox/projects/BenthoBox_evaluation/data/summary_allcamp_090319.csv.csv", sep=",")
 
 # Data extracted from REEFMON using this query:
-# Select s.CRUISE_CODE, vs.SHELF, vs.REEF_NAME, vs.SITE_NO, vs.TRANSECT_NO, v.Filename,  v.Point_No, 
+# Select s.CRUISE_CODE, vs.SHELF, vs.REEF_NAME, vs.SITE_NO, vs.TRANSECT_NO, v.Filename,  v.Point_No,
 # c.KER_CODE AS obs, p.CATEGORY AS pred
 # From V_IMAGE_CLASSIFICATION p, RM_VPOINT v, V_ALL_VPOINT_CODES_KER c, V_IN_SAMPLE vs, SAMPLE s
 # Where p.Vpoint_Sid = v.Vpoint_Sid
